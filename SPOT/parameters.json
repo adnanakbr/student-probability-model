@@ -1,0 +1,19 @@
+{
+    "training":
+    {
+        "max_depth": 8,
+        "n_estimators": 50
+    },
+    "evaluation":
+    {
+
+    },
+    "registration":
+    {
+        "tags": ["mse"]
+    },
+    "scoring":
+    {
+        
+    }
+}
