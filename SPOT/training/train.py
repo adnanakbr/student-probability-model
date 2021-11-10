@@ -72,7 +72,7 @@ def main():
     }
 
     # Load the training data as dataframe
-    data_dir = "/home/adnan/OU/azure-devops/mlops/student-probability-model/SPOT/data"
+    data_dir = "/home/adnan/OU/azure-devops/mlops/student-probability-model/data"
     data_file = os.path.join(data_dir, 'student_data.csv')
     train_df = pd.read_csv(data_file)
     #pre-processing - convert categorical columns into label encoding
