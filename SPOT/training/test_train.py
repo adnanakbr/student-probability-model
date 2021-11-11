@@ -19,7 +19,7 @@ def test_get_model_metrics():
 
         @staticmethod
         def predict(data):
-            return ([8.12121212, 7.21212121])
+            return ([0])
 
     X_test = np.array([3, 4]).reshape(-1, 1)
     y_test = np.array([0])
