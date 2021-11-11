@@ -55,14 +55,15 @@ def main():
     caller_run_id_param = PipelineParameter(name="caller_run_id", default_value="none")  # NOQA: E501
 
     # Get dataset name
-    dataset_name = e.dataset_name
+    # dataset_name = e.dataset_name
+    dataset_name = "SPOT"
 
     # Check to see if dataset exists
     if dataset_name not in aml_workspace.datasets:
         # This call creates an example CSV from sklearn sample data. If you
         # have already bootstrapped your project, you can comment this line
         # out and use your own CSV.
-        create_sample_data_csv()
+        # create_sample_data_csv()
 
         # Use a CSV to read in the data set.
         file_name = "SPOT.csv"
