@@ -67,7 +67,7 @@ def main():
     # Load the training data as dataframe
     base_dir = "/home/adnan/OU/azure-devops/mlops/"
     data_dir = base_dir + "student-probability-model/data"
-    data_file = os.path.join(data_dir, 'student_data.csv')
+    data_file = os.path.join(data_dir, 'SPOT.csv')
     train_df = pd.read_csv(data_file)
     category_columns = train_df.select_dtypes(include=['object']).columns
     for column in category_columns:
