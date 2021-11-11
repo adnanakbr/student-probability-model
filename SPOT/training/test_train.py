@@ -1,9 +1,6 @@
 import numpy as np
 from SPOT.training.train import get_model_metrics
 
-
-
-
 def test_get_model_metrics():
 
     class MockModel:
