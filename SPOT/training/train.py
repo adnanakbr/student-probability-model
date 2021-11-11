@@ -25,7 +25,7 @@ POSSIBILITY OF SUCH DAMAGE.
 """
 
 from sklearn.datasets import load_diabetes
-#from sklearn.linear_model import Ridge
+from sklearn.linear_model import Ridge
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import balanced_accuracy_score
 from sklearn.metrics import mean_squared_error
