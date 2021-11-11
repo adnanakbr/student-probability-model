@@ -22,11 +22,11 @@ def test_get_model_metrics():
             return ([8.12121212, 7.21212121])
 
     X_test = np.array([3, 4]).reshape(-1, 1)
-    y_test = np.array([8, 7])
+    y_test = np.array([0])
     data = {"test": {"X": X_test, "y": y_test}}
 
     metrics = get_model_metrics(MockModel(), data)
 
-    assert 'mse' in metrics
-    mse = metrics['mse']
-    np.testing.assert_almost_equal(mse, 0.029843893480257067)
+    assert 'accuracy' in metrics
+    accuracy = metrics['accuracy']
+    np.testing.assert_almost_equal(accuracy, 0)
