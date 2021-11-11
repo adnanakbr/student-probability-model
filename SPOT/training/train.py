@@ -66,7 +66,7 @@ def main():
     print("Running train.py")
 
     # Define training parameters
-    args = {"max_depth": 8, "n_estimators":50}
+    args = {"max_depth": 8}
 
     # Load the training data as dataframe
     data_dir = "/home/adnan/OU/azure-devops/mlops/student-probability-model/data"

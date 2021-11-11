@@ -1,8 +1,7 @@
 {
     "training":
     {
-        "max_depth": 8,
-        "n_estimators": 50
+        "max_depth": 8
     },
     "evaluation":
     {
@@ -10,7 +9,7 @@
     },
     "registration":
     {
-        "tags": ["mse"]
+        "tags": ["balanced_accuracy"]
     },
     "scoring":
     {
