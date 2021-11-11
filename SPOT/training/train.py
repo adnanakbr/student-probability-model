@@ -24,14 +24,10 @@ ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
 
-from sklearn.datasets import load_diabetes
-from sklearn.linear_model import Ridge
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import balanced_accuracy_score
-from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import pandas as pd
-import joblib
 import os
 
 
@@ -69,10 +65,10 @@ def main():
     args = {"max_depth": 8}
 
     # Load the training data as dataframe
-    data_dir = "/home/adnan/OU/azure-devops/mlops/student-probability-model/data"
+    base_dir = "/home/adnan/OU/azure-devops/mlops/"
+    data_dir = base_dir + "student-probability-model/data"
     data_file = os.path.join(data_dir, 'student_data.csv')
     train_df = pd.read_csv(data_file)
-    #pre-processing - convert categorical columns into label encoding
     category_columns = train_df.select_dtypes(include=['object']).columns
     for column in category_columns:
         train_df[column] = train_df[column].astype('category')

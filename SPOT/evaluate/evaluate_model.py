@@ -99,7 +99,7 @@ if (args.run_id is not None):
 if (run_id == 'amlcompute'):
     run_id = run.parent.id
 model_name = args.model_name
-metric_eval = "balanced_accuracy"
+metric_eval = "bal_acc"
 
 allow_run_cancel = args.allow_run_cancel
 # Parameterize the matrices on which the models should be compared
@@ -115,24 +115,24 @@ try:
                 aml_workspace=ws)
 
     if (model is not None):
-        production_model_balanced_accuracy = 0.5
+        production_model_bal_acc = 0.5
         if (metric_eval in model.tags):
-            production_model_balanced_accuracy = float(model.tags[metric_eval])
-        new_model_balanced_accuracy = float(run.parent.get_metrics().get(metric_eval))
-        if (production_model_balanced_accuracy is None or new_model_balanced_accuracy is None):
+            production_model_bal_acc = float(model.tags[metric_eval])
+        new_model_bal_acc = float(run.parent.get_metrics().get(metric_eval))
+        if (production_model_bal_acc is None or new_model_bal_acc is None):
             print("Unable to find", metric_eval, "metrics, "
                   "exiting evaluation")
             if((allow_run_cancel).lower() == 'true'):
                 run.parent.cancel()
         else:
             print(
-                "Current Production model balanced_accuracy: {}, "
-                "New trained model balanced_accuracy: {}".format(
-                    production_model_balanced_accuracy, new_model_balanced_accuracy
+                "Current Production model bal_acc: {}, "
+                "New trained model bal_acc: {}".format(
+                    production_model_bal_acc, new_model_bal_acc
                 )
             )
 
-        if (new_model_balanced_accuracy < production_model_balanced_accuracy):
+        if (new_model_bal_acc < production_model_bal_acc):
             print("New trained model performs better, "
                   "thus it should be registered")
         else:
