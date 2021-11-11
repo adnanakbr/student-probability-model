@@ -19,7 +19,7 @@ def test_get_model_metrics():
 
         @staticmethod
         def predict(data):
-            return ([0])
+            return ([0.0])
 
     X_test = np.array([3, 4]).reshape(-1, 1)
     y_test = np.array([0])
@@ -29,4 +29,4 @@ def test_get_model_metrics():
 
     assert 'accuracy' in metrics
     accuracy = metrics['accuracy']
-    np.testing.assert_almost_equal(accuracy, 0)
+    np.testing.assert_almost_equal(accuracy, 1.0)
