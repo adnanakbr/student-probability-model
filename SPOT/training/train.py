@@ -69,6 +69,7 @@ def main():
     data_dir = base_dir + "student-probability-model/data"
     data_file = os.path.join(data_dir, 'SPOT.csv')
     train_df = pd.read_csv(data_file)
+    train_df = train_df.drop(columns=['hesa_courseaim_level'])
     category_columns = train_df.select_dtypes(include=['object']).columns
     for column in category_columns:
         train_df[column] = train_df[column].astype('category')
