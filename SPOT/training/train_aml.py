@@ -145,6 +145,13 @@ def main():
 
     # Split the data into test/train
     df = dataset.to_pandas_dataframe()
+
+    # convert categorical features into cat codes
+    category_columns = df.select_dtypes(include=['object']).columns
+    for column in category_columns:
+        df[column] = df[column].astype('category')
+        df[column] = df[column].cat.codes
+        
     data = split_data(df)
 
     # Train the model
