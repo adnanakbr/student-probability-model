@@ -151,9 +151,8 @@ def main():
     for column in category_columns:
         df[column] = df[column].astype('category')
         df[column] = df[column].cat.codes
-        
-    data = split_data(df)
 
+    data = split_data(df)
     # Train the model
     model = train_model(data, train_args)
 
