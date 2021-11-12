@@ -152,6 +152,7 @@ def main():
         df[column] = df[column].astype('category')
         df[column] = df[column].cat.codes
 
+    df = df.fillna(df.mean())
     data = split_data(df)
     # Train the model
     model = train_model(data, train_args)
